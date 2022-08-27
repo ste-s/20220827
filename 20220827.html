@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20220827</title>
+    <script lang="javascript">
+                function tabuada(...args) 
+        {
+            for (const number of args) 
+            {
+                construirTabuada(number);
+            }
+        }
+
+        function construirTabuada(numero) 
+        {
+            let color_td; 
+
+            document.write("<table border='1px' style='margin: 10px'>");
+            color_td = "#ccc";
+            document.write(`<thead>Tabuada do número: ${numero}</thead>`);  
+            document.write("<td style='width:30px;background-color: " + color_td + "'>Multiplicando</td>");
+
+            for (let i = 1; i <= 10; i++) 
+            {
+                document.write("<td style='width:30px;background-color: " + color_td + "'>" + i + "</td>");
+            }
+            document.write("<tr style='height:30px;'>");
+            color_td = "#fff";
+            document.write("<td style='width:30px;background-color: " + color_td + "'>Resultado</td>");
+
+            for (let j = 1; j <= 10; j++) 
+            {
+                document.write("<td style='width:30px;background-color:" + color_td + "'>" + j * numero + "</td>");
+            }
+            document.write("</tr>");
+            document.write("</table>"); 
+        }
+    </script>
+</head>
+<body>
+    <script lang="javascript">
+        var v1, v2, v3, v4, media;
+        v1 = window.prompt("Digite um valor qualquer: ");
+        v2 = window.prompt("Digite um valor qualquer: ");
+        v3 = window.prompt("Digite um valor qualquer: ");
+        v4 = window.prompt("Digite um valor qualquer: ");
+        media = (v1 + v2 + v3 + v4) / 4;
+        document.write("A média aritimética entre os quatro valores é de : " + media + "<br>");
+
+        var art1, art2, art3;
+        art1 = parseInt(window.prompt("Digite um valor qualquer: "));
+        art2 = parseInt(window.prompt("Digite um valor qualquer: "));
+        art3 = parseInt(window.prompt("Digite um valor qualquer: "));
+        if ((art1 + art2 > art3) && (art2 + art3 > art1) && (art1 + art3 > art2))
+        {
+            if (art1 != art2 != art3)
+            {
+                document.writeln("Os valores formam um triângulo escaleno. <br>");
+            }
+            else if (art1 = art2 = art3)
+            {
+                document.writeln("Os valores formam um triângulo isósceles. <br>");
+            }
+            else
+            {
+                document.writeln("Os valores formam um triângulo equilátero. <br>");
+            }
+        }
+        else
+        {
+            document.writeln("Os valores não formam um triângulo. <br>");
+        }
+
+        var tab;
+        do
+        {
+        tab = window.prompt("Digite um valor positivo qualquer para exibição da sua respectiva tabuada.");
+        }while(tab <= 0)
+        tabuada(tab);
+    </script>
+</body>
+</html>
